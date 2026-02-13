@@ -1,0 +1,8 @@
+{
+  "series": [
+    { "id": "Qwen", "name": "Qwen Series", "description": "Evolution of Qwen LLMs", "cover": "" }
+  ],
+  "benchmarks": [
+    { "id": "SWE-Bench", "name": "SWE-Bench", "description": "Software Engineering Agents", "cover": "" }
+  ]
+}
