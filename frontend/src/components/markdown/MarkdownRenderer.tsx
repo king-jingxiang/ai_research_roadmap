@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeMathjax from "rehype-mathjax";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { cn } from "@/lib/utils";
 
@@ -27,9 +28,9 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, onC
   const transformedContent = transformContent(content);
 
   return (
-    <div className={cn("prose prose-invert max-w-none dark:prose-invert prose-headings:text-primary prose-a:text-accent hover:prose-a:text-accent/80 prose-code:text-accent prose-pre:bg-muted/50 prose-pre:border prose-pre:border-border", className)}>
+    <div className={cn("prose max-w-none dark:prose-invert prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-ul:text-foreground prose-ol:text-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-code:text-primary prose-pre:bg-muted/50 prose-pre:border prose-pre:border-border prose-th:text-foreground prose-td:text-foreground", className)}>
       <ReactMarkdown
-        remarkPlugins={[remarkMath]}
+        remarkPlugins={[remarkMath, remarkGfm]}
         rehypePlugins={[rehypeHighlight, rehypeMathjax, rehypeRaw]}
         components={{
           a: ({ node, href, children, ...props }) => {
