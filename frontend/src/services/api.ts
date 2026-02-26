@@ -1,6 +1,6 @@
 import type { IndexData, SeriesData, Paper } from "@/types";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || import.meta.env.BASE_URL;
+const API_BASE_URL = "https://pub-f31a5865021b44d0a2c4003b3da37f04.r2.dev/ai_research_roadmap/";
 
 export const api = {
   async fetchIndex(): Promise<IndexData> {
